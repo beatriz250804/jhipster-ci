@@ -14,13 +14,13 @@ pipeline {
 
     stage('Build') {
       steps {
-        bat './mvnw -B -DskipTests=false clean package'
+        sh './mvnw -B -DskipTests=false clean package'
       }
     }
 
     stage('Unit tests') {
       steps {
-        bat './mvnw -B test'
+        sh './mvnw -B test'
       }
     }
   }
